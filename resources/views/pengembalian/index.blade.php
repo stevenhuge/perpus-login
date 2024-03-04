@@ -16,6 +16,9 @@
                 <td> {{ $row->buku->judul_buku }} </td>
                 <td> {{ $row->tanggal_kembali }} </td>
                 <td> {{ $row->denda }} </td>
+                <td>
+                    <a href="{{ route('d-pengembalian', $row->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                </td>
             </tr>
         @endforeach
     </tbody>

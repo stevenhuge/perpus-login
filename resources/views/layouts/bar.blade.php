@@ -69,12 +69,12 @@
           <ul class="list-unstyled">
             <li class="form-control mt-4"><i class="fa-solid fa-book"></i> Buku</li>
             <li><a href="{{ route('i-buku') }}" class="btn btn-primary mt-2 form-control">Buku</a></li>
-            <li><a href="{{ route('i-buku') }}" class="btn btn-warning mt-1 form-control">Tambah Buku</a></li>
+            <li><a href="{{ route('c-buku') }}" class="btn btn-warning mt-1 form-control">Tambah Buku</a></li>
         </ul>
           <ul class="list-unstyled">
               <li class="form-control mt-4"><i class="fa-solid fa-user-group"></i> Anggota</li>
               <li><a href="{{ route('i-anggota') }}" class="btn btn-primary mt-2 form-control">Anggota</a></li>
-              <li><a href="{{ route('i-anggota') }}" class="btn btn-warning mt-1 form-control">Tambah Anggota</a></li>
+              <li><a href="{{ route('c-anggota') }}" class="btn btn-warning mt-1 form-control">Tambah Anggota</a></li>
           </ul>
           @endif
 

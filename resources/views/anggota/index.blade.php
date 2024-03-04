@@ -16,6 +16,9 @@
                 <td> {{ $row->jenis_kelamin }} </td>
                 <td> {{ $row->alamat }} </td>
                 <td> {{ $row->telepon }} </td>
+                <td>
+                    <a href="{{ route('d-anggota', $row->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                </td>
             </tr>
         @endforeach
     </tbody>

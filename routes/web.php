@@ -8,6 +8,7 @@ use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AdminOnly;
 use App\Http\Middleware\PetugasOnly;
+use App\Models\Pengembalian;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,9 +34,14 @@ Route::middleware('auth:sanctum')->group(function () {
 
        //    buku
        Route::get('/buku', [BukuController::class, 'index'])->name('i-buku');
+       Route::get('/bulu/create', [BukuController::class, 'create'])->name('c-buku');
+       Route::post('/buku', [BukuController::class, 'store'])->name('s-buku');
 
        //    anggota
-          Route::get('/anggota', [AnggotaController::class, 'index'])->name('i-anggota');
+       Route::get('/anggota', [AnggotaController::class, 'index'])->name('i-anggota');
+       Route::get('/anggota/create', [AnggotaController::class, 'create'])->name('c-anggota');
+       Route::post('/anggota', [AnggotaController::class, 'store'])->name('s-anggota');
+       Route::get('/anggota/{id}', [AnggotaController::class, 'destroy'])->name('d-anggota');
     });
     
     Route::middleware(PetugasOnly::class)->group(function () {
@@ -47,6 +53,7 @@ Route::middleware('auth:sanctum')->group(function () {
     //    pengembalian
        Route::get('/pengembalian', [PengembalianController::class, 'index'])->name('i-pengembalian');
        Route::get('/pengembalian/{id}', [PengembalianController::class, 'store'])->name('s-pengembalian');
+       Route::get('/pengembalian/delete/{id}', [PengembalianController::class, 'destroy'])->name('d-pengembalian');
     });
     
 });
